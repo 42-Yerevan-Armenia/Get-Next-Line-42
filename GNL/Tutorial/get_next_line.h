@@ -19,7 +19,7 @@
 # include <stdio.h>//main
 # include <fcntl.h>//main
 
-# ifndef BUFFER_SIZE //Ժամանակավոր պահեստային տարածք
+# ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 
 # endif
