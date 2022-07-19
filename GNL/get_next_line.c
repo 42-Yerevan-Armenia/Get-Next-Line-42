@@ -12,10 +12,12 @@
 
 #include "get_next_line.h"
 
-char	*mywhile(int fd, long rsize, char *sline)
+char	*mywhile(int fd, char *sline)
 {
-	char		buffer[BUFFER_SIZE + 1];
+	char	buffer[BUFFER_SIZE + 1];
+	long	rsize;
 
+	rsize = 0;
 	while (1)
 	{	
 		rsize = read(fd, buffer, BUFFER_SIZE);
@@ -37,13 +39,9 @@ char	*get_next_line(int fd)
 	static char	*sline;
 	char		*until_n;
 	char		*tline;
-	long		rsize;
 	long		slinelen;
 
-	rsize = 1;
-	if (rsize == 0)
-		return (NULL);
-	sline = mywhile(fd, rsize, sline);
+	sline = mywhile(fd, sline);
 	if (!sline)
 		return (NULL);
 	slinelen = ft_strlen(sline) - ft_strlen(ft_strchr(sline, '\n')) + 1;
