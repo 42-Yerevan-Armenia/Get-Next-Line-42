@@ -25,7 +25,7 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*mywhile(int fd, long rsize, char *sline);
+char	*mywhile(int fd, char *sline);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
