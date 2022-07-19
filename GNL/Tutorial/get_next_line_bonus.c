@@ -17,7 +17,6 @@ char	*mywhile(int fd, char *sline)
 	char	buffer[BUFFER_SIZE + 1];
 	long	rsize;
 
-	rsize = 0;
 	while (1)
 	{	
 		rsize = read(fd, buffer, BUFFER_SIZE);
