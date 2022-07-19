@@ -55,14 +55,19 @@ int	main(void)
 {
 	int	i;
 	int	fd;
+	char	*ch;
 
 	i = 20;
 	fd = open("gnl.txt", O_RDONLY);
 //printf("%s\n", get_next_line(fd));
 //printf("%s\n", get_next_line(fd));
-	while (i != 0)
+	while (i--)
 	 {
-	 	printf("%s\n", get_next_line(fd));
-	 	i--;
+		ch = get_next_line(fd);
+	 	printf("%s\n", ch);
+		free(ch);
 	 }
+	close(fd);
+	//while(1) check memory leak by typing in terminal "ps", after "leaks 9357(random number)"
+	//	return (0);
 }
