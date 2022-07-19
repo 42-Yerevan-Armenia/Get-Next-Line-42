@@ -35,7 +35,6 @@ char	*mywhile(int fd, char *sline)
 	char	buffer[BUFFER_SIZE + 1];
 	long	rsize;//read size
 
-	rsize = 0;//read something
 	while (1)//cycle is true
 	{	
 		rsize = read(fd, buffer, BUFFER_SIZE);//taking size of readed buffer
