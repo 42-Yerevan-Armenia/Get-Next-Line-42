@@ -17,12 +17,8 @@ char	*get_next_line(int fd)
 	static char	*sline;//line where we working
 	char		*until_n;
 	char		*tline;//temporary line
-	long		rsize;//read size
 	long		slinelen;//long
 
-	rsize = 1;//must read something, but we can comment it
-	if (rsize == 0)
-		return (NULL);
 	sline = mywhile(fd, rsize, sline);
 	if (!sline)
 		return (NULL);
@@ -34,10 +30,12 @@ char	*get_next_line(int fd)
 	return (until_n);
 }
 
-char	*mywhile(int fd, long rsize, char *sline)
+char	*mywhile(int fd, char *sline)
 {
-	char		buffer[BUFFER_SIZE + 1];
+	char	buffer[BUFFER_SIZE + 1];
+	long	rsize;//read size
 
+	rsize = 0;//read something
 	while (1)//cycle is true
 	{	
 		rsize = read(fd, buffer, BUFFER_SIZE);//taking size of readed buffer
