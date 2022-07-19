@@ -55,7 +55,9 @@ int	main(void)
 {
 	int	i;
 	int	fd;
-	int fd2;
+	int 	fd2;
+	char	*ch1;
+	char	*ch2;
 
 	i = 10;
 	fd = open("gnl.txt", O_RDONLY);
@@ -64,10 +66,13 @@ int	main(void)
 //printf("%s\n", get_next_line(fd2));
 //printf("%s\n", get_next_line(fd));
 //printf("%s\n", get_next_line(fd2));
-	 while (i != 0)
+	 while (i--)
 	 {
-	 	printf("%s\n", get_next_line(fd));
-	 	printf("%s\n", get_next_line(fd2));
-	 	i--;
+		 ch1 = get_next_line(fd1);
+		 ch2 = get_next_line(fd2);
+		 printf("%s\n", ch1);
+		 printf("%s\n", ch2);
+		 free(ch);
 	 }
+	close(fd);
 }
