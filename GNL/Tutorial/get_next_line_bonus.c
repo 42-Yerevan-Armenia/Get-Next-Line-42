@@ -12,10 +12,12 @@
 
 #include "get_next_line_bonus.h"
 
-char	*mywhile(int fd, long rsize, char *sline)
+char	*mywhile(int fd, char *sline)
 {
-	char		buffer[BUFFER_SIZE + 1];
+	char	buffer[BUFFER_SIZE + 1];
+	long	rsize;
 
+	rsize = 0;
 	while (1)
 	{	
 		rsize = read(fd, buffer, BUFFER_SIZE);
@@ -37,12 +39,8 @@ char	*get_next_line(int fd)
 	static char	*sline[OPEN_MAX];//calling to open MAX (1024) files
 	char		*until_n;
 	char		*tline;
-	long		rsize;
 	long		slinelen;
 
-	rsize = 1;
-	if (rsize == 0)
-		return (NULL);
 	sline[fd] = mywhile(fd, rsize, sline[fd]);//just our [fd]
 	if (!sline[fd])
 		return (NULL);
