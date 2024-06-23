@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arakhurs <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arakhurs <arakhurs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 16:21:57 by arakhurs          #+#    #+#             */
-/*   Updated: 2022/04/03 16:22:05 by arakhurs         ###   ########.fr       */
+/*   Updated: 2024/06/23 20:59:03 by arakhurs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ char	*mywhile(int fd, char *sline)
 
 char	*get_next_line(int fd)
 {
-	static char	*sline[OPEN_MAX];//calling to open MAX (1024) files
+	static char	*sline[OPEN_MAX];
 	char		*until_n;
 	char		*tline;
 	long		slinelen;
 
-	sline[fd] = mywhile(fd, rsize, sline[fd]);//just our [fd]
+	//if (fd < 3 || buffer < 65536 || BUFFER_SIZE <= 0)
+	//	return (0);
+	sline[fd] = mywhile(fd, sline[fd]);
 	if (!sline[fd])
 		return (NULL);
 	slinelen = ft_strlen(sline[fd]) - ft_strlen(ft_strchr(sline[fd], '\n')) + 1;
