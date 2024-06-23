@@ -7,22 +7,18 @@
 <p> After buffer we declare '\0' to declare the end, otherwise we will fill the buffer with trash
 When we find '\n' we divide “look of our gnl.” by “Nice.”. In this code we calculate the size of 2 by subtracting 3 from 1. Then move 3 to the next static line join the next buffer, and save 2 to our current static line. free 1 at the end
 
-	       Hello World I am Programmer, let’s take a look of our gnl.
-Nice. It works. Yep
+		Hello World I am Programmer, let’s take a look of our gnl. Nice. It works. Yep
 buffer      [---------------------------] that reads the text of its size
-	       Hello World I am Pro grammer, let’s take a  look of our gnl.\nNice..
-1										2		3
-static line [---------------------------][---------------------------][--------------------'\n'------] brake ;
+	       
+		Hello World I am Pro❗️grammer, let’s take a❗️look of our gnl.\nNice..
+static line [------------1----------]❗️[-----------1----------]❗️[---------2--------'\n'---3---] break;
 
-
-       Hello World I am Pro grammer, let’s take a  look of our gnl.'\0'
-1										2
-static line [---------------------------][---------------------------][--------------------]'\0'
+		Hello World I am Pro❗️grammer, let’s take a❗️look of our gnl.'\0'
+static line [------------1----------]❗️[-----------1----------]❗️[---------1--------]'\0'
 	
 
-	     Nice. It works. Yep
-	    	       3	  +	buffer
-next static line [------][---------------------------][---------------------------][---------------------------]...
+		      Nice.❗️ It works. Yep
+next static line [---3---]❗️[-------------1--------------][---------------------------][---------------------------]...
 
 #### Bonus
 <p>Ուղակի կանչվում է <limits.h> գրադարանը որպեսզի հայտարարվի MAX fd(3, 4, 5…), որը ստանդարտով 65536 (OPEN_MAX) է և static line[fd], բացի while ցիկլից, որտեղ ստուգում ենք '\n'
